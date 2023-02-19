@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kood/Progress page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons8-puzzle-64.png"
+    />
+    <link rel="stylesheet" , href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/7596ed271d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <h1 id="welcome">Welcome to kood progress page</h1>
+    <div class="welcome-wrapper">
+      <h4>Enter your username: </h4>
+      <input id="username" value="austraalane">
+    </div>
+
+
+    <div class="selection-wrapper">
+      <div class="piscine-choice active" data-target="go">Go piscine</div>
+      <div class="piscine-choice" data-target="div">Div 01</div>
+    </div>
+
+    <div class="general-info margin-top">
+      <div class="level bgLight">
+        <h4 id="ratioPie"></h4>
+
+        <div class="progressCircle">
+          <div id="svgWrapper">
+            <svg
+              class="svg"
+              width="220"
+              height="220"
+              viewPort="0 0 110 110"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="linear" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stop-color="#4c3b74" />
+                  <stop offset="100%" stop-color="#5edfe7" />
+                </linearGradient>
+              </defs>
+
+              <circle
+                id="bar-bg"
+                r="98"
+                cx="110"
+                cy="110"
+                fill="transparent"
+                stroke-dasharray="615.752"
+                stroke-dashoffset="615.752"
+              ></circle>
+              <circle
+                id="bar"
+                r="96"
+                cx="110"
+                cy="110"
+                fill="transparent"
+                stroke-dasharray="615.752"
+                stroke-dashoffset="615.752"
+              ></circle>
+            </svg>
+          </div>
+
+          <span class="percentage">0%</span>
+        </div>
+
+        <div class="level-number" id="xpRatio"></div>
+      </div>
+      <div class="level bgDark">
+        Audit RATIO
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          class="chart"
+          width="420"
+          height="150"
+          aria-labelledby="title"
+          role="img"
+        >
+          <title id="title">A bart chart showing information</title>
+
+          <g class="bar">
+            <rect id="auditDoneRect" width="200" height="19" y="60"></rect>
+            <text x="250" y="68" dy=".35em">DONE</text>
+          </g>
+          <g class="bar">
+            <rect id="auditRecRect" width="200" height="19" y="90"></rect>
+            <text x="250" y="98" dy=".35em">RECEIVED</text>
+          </g>
+        </svg>
+        <div id="audit-ratio"></div>
+        <div id="audit-received"></div>
+        <div id="audit-done"></div>
+      </div>
+    </div>
+
+    <div class="transactions">
+      <div class="first">
+        Tasks completed:
+        <div id="transactionsResult" class="points-number"></div>
+      </div>
+      <div class="first">
+        XP earned:
+        <div id="points-number" class="points-number"></div>
+      </div>
+
+      <div class="seeDetails first" id="seeDetails">
+        DETAILS<i class="fas fa-long-arrow-down"></i>
+      </div>
+    </div>
+
+    <div id="result" class="hide"></div>
+
+    <div class="timeline" id="go-timeline">
+      <h4 id="timeline-title"></h4>
+      <svg id="goSVGTimeLine"
+        version="1.2"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        class="graphGo"
+        aria-labelledby="title"
+        role="img"
+      >
+        <title id="title">A line chart showing some information</title>
+        <g class="grid x-grid" id="xGrid">
+          <line x1="90" x2="90" y1="5" y2="400"></line>
+        </g>
+        <g class="grid y-grid" id="yGrid">
+          <line x1="90" x2="1000" y1="400" y2="400"></line>
+        </g>
+        <g class="labels x-labels" id="x-label"></g>
+        <g class="labels y-labels" id="y-label"></g>
+
+        <polyline
+          id ="polyline-id-go"
+          fill="none"
+          stroke="#5edfe7"
+          stroke-width="3"
+          points=""
+        />
+      </svg>
+    </div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
